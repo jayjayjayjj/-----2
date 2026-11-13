@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>استطلاع الرأي</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body dir="rtl" class="content-page survey-page">
+
+  <h1>شاركنا رأيك</h1>
+  <hr>
+
+  <p>
+    ساعدنا في معرفة الأماكن السياحية التي تفضلها في الصين،
+    <br>
+    وذلك من خلال الإجابة عن الأسئلة التالية :
+  </p>
+
+  <div class="city-container">
+    <div class="city-card">
+
+      <form action="database.php" method="post"
+      enctype="multipart/form-data">
+      <label for="user">الاسم : </label>
+      <input id="name" type="text" name="username" placeholder="ادخل اسمك" minlength="2" maxlength="10" pattern="[ء-ي]+" required 
+      onkeyup="check()">
+      <p id="msg"></p>
+      <script>
+        function check(){
+          if(document.getElementById("name").checkValidity()==true){
+            document.getElementById("msg").innerHTML="المدخل صحيح";
+            document.getElementById("msg").style.color="green";
+          }
+          else {
+            document.getElementById("msg").innerHTML="الاسم يجب ان يكون بين 2 و 10 احرف ويتكون من احرف ابجديه فقط";
+            document.getElementById("msg").style.color="red";
+          }
+        }
+      </script>
+
+        <h2>ما المدينة السياحية التي ترغب في زيارتها؟</h2>
+
+        <input type="checkbox" name="place" value="beijing"> بكين
+        <input type="checkbox" name="place" value="shanghai"> شنغهاي
+        <input type="checkbox" name="place" value="xian"> شيان
+        <input type="checkbox" name="place" value="other"> اخرى
+
+        <hr>
+
+        <h2>ما النشاط السياحي الذي تفضله؟</h2>
+
+        <input type="checkbox" name="activity" value="shopping"> التسوق
+        <input type="checkbox" name="activity" value="culture"> اكتشاف الثقافة الصينية
+        <br>
+        <input type="checkbox" name="activity" value="nature"> زيارة الأماكن الطبيعية
+        <input type="checkbox" name="activity" value="other"> اخرى
+
+        <hr>
+
+        <h2>كيف تقيم موقعنا السياحي؟</h2>
+
+        <input type="radio" name="rating" value="excellent"> ممتاز
+        <input type="radio" name="rating" value="good"> جيد
+        <input type="radio" name="rating" value="average"> يحتاج إلى تحسين
+
+        <br><br>
+
+        <textarea name="message" rows="4" cols="40"
+        placeholder="مساحة حرة للتعبير عن رأيك"></textarea>
+
+        <br><br>
+        <p style="background-color:#8f2028 ;">
+        <a href="thank.html">إرسال</a>
+        </p>
+      </form>
+
+    </div>
+  </div>
+
+  <a href="home.html">الصفحة الرئيسية</a>
+
+</body>
+
+</html>
